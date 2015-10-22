@@ -2,9 +2,9 @@
 
 <html>
 <head>
-  <title>ShinyOtaku's Meme-Maker</title>
-    
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>ShinyOtaku's Meme Generator</title>
+     <link rel="stylesheet" href="css/style.css">
+  <meta name="ShinyOtaku viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <style>
@@ -13,19 +13,16 @@
     }
   </style>
 </head>
-  G'day! Feel free to use this Meme maker for your photo's.
-<br>
-Step 1: Click on '<strong>Choose File</strong>' then your image will upload
+ <h2> G'day! Feel free to use this Meme generator for your photo's.</h2>
+<p>Step 1: Click on '<strong>Choose File</strong>' then your image will upload
 <br>
 Step 2: <strong>Type</strong> whatever words you want to display on top and bottom of image
 <br>
 Step 3: Select '<strong>Save</strong>'
 <br>
-Step 4: A new page will open with your new image. Right click on the image then <strong>'Save Image As'</strong> to your desktop
-<p>
-Have fun and feel free to share this simple tool with your friends!<br>
--Leah (aka @<a href="http://bit.ly/ShinyOtaku" target="_blank">ShinyOtaku</a>)
-
+Step 4: A new page will open with your new image. Right click on the image then <strong>'Save Image As'</strong> to your desktop</p>
+<p>Have fun and feel free to share this simple tool with your friends!<br>
+-Leah (aka @<a href="http://bit.ly/ShinyOtaku" target="_blank">ShinyOtaku</a>)</p>
 <p>
 <body>
 <script>
@@ -36,7 +33,7 @@ Have fun and feel free to share this simple tool with your friends!<br>
     <input type="file" id="file" />  
   </div>
   <div id="image-container">
-    <canvas width="700" height="700"></canvas>
+    <canvas width="400" height="400"></canvas>
     <div>
       <span>Top Line:</span><br/>
       <input id="topLineText" type="text"><br/>
@@ -60,14 +57,13 @@ Have fun and feel free to share this simple tool with your friends!<br>
     }
     
     function redrawMeme(image, topLine, bottomLine) {
-      // Get Canvas2DContext
       var canvas = document.querySelector('canvas');
       var ctx = canvas.getContext("2d");
       if (image !=null)
         ctx.drawImage(image, 0,0, canvas.width, canvas.height);
 
 //Text attributes
-ctx.font='30pt Impact';
+ctx.font='36pt Impact';
 ctx.textAlign='center';
 ctx.strokeStyle='black';
 ctx.lineWidth=3;
@@ -91,8 +87,8 @@ ctx.strokeText(bottomLine, canvas.width/ 2, canvas.height-20);
     
 
     function handleFileSelect(evt) {
-      var canvasWidth = 500;
-      var canvasHeight = 500;
+      var canvasWidth = 400;
+      var canvasHeight = 400;
       var file = evt.target.files[0];
       
       
